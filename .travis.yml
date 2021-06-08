@@ -5,7 +5,7 @@ services:
 - docker
 addons:
   sonarcloud:
-    organization: "moviet"
+    organization: "mohsen-hn"
 
 cache:
   directories:
@@ -13,9 +13,14 @@ cache:
   - $HOME/.m2
   - node_modules
 
+#safelist
+branches:
+  only:
+    - develop
+
 jobs:
   include:
   - stage: Prepare
     script:
-      - mvn clean install sonar:sonar -Dsonar.projectKey=Mohsen-HN_projet_informatique-moviet -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=2a9f4146bce3f1a8a5bf798d9aa4ccf4ef5f121f
-      - echo "Hello world!"
+      - bash scripts/build_locally.sh
+      - mvn clean sonar:sonar -Dsonar.projectKey=Mohsen-HN_projet_informatique-moviet -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=2a9f4146bce3f1a8a5bf798d9aa4ccf4ef5f121f
