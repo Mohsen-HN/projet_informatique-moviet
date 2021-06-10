@@ -3,7 +3,7 @@
 # Moviet project
 The project for projets informatics (pinfo)
 
-Member:
+Members:
 - Mohsen
 - Ethan
 - Stéphane
