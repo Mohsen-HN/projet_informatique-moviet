@@ -24,7 +24,6 @@ $ chmod u+x scripts/run_locally.sh
 $ ./scripts/run_locally.sh
 ```
 
-
 ## Kill and remove Docker containers
 Make the file executable then run the script:
 ```bash
